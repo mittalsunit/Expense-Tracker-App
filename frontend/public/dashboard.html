@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/style2.css"/>
+    <title>Dashboard</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Dashboard</h1>
+
+      <!-- Add Expense Section -->
+    <div class="card p-4">
+      <h3>Add Expense</h3>
+      <form id="addExpenseForm" class="row g-3">
+        <div class="col-md-4">
+          <input type="number" class="form-control" id="amount" placeholder="Amount" required />
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="description" placeholder="Description" required />
+        </div>
+        <div class="col-md-4">
+          <select id="category" class="form-select" required>
+            <option value="select">select</option>
+            <option value="Food">Food</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="col-md-12 text-end">
+          <button type="submit" class="btn btn-custom">Add</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Expenses List -->
+    <div class="card p-4 expenses-container">
+      <h3>Your Expenses</h3>
+      <ul id="expenseList"></ul>
+    </div>
+
+    <!-- Buy Premium Section -->
+    <div class="card p-4 text-center">
+      <h3>Upgrade to Premium</h3>
+      <button id="buyPremium" class="btn btn-custom">Buy Premium Membership</button>
+    </div>
+
+    <!-- Premium Features -->
+    <div id="premiumFeatures" class="card p-4" style="display: none;">
+      <h3>Welcome, Premium User!</h3>
+      <div class="d-flex justify-content-between">
+        <button id="viewLeaderboard" class="btn btn-custom">View Leaderboard</button>
+        <button id="downloadExpenses" class="btn btn-custom">Download Expenses</button>
+      </div>
+    </div>
+
+    <!-- Leaderboard Section -->
+    <div id="leaderboard" class="card p-4 leaderboard-container" style="display: none">
+      <h3>Leaderboard</h3>
+      <ul id="leaderboardList"></ul>
+    </div>
+  </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A18EAKOQoHQTwpXIpOfFZC6ATsMkCwAO5jLpGjqHyk0zD7313ANNCe0pKaev2" crossorigin="anonymous"></script>
+  </body>
+</html>
